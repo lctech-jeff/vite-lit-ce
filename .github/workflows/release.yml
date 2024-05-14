@@ -19,7 +19,7 @@ jobs:
       - name: echo version in package json
         run: |
           echo ${{steps.get_version.outputs.version}}
-      - uses: google-github-actions/release-please-action@v4
+      - uses: googleapis/release-please-action@v4
         id: release
         with:
           config-file: .github/workflows/release-please-config.json

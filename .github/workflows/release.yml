@@ -1,0 +1,30 @@
+name: Node.js Package (Github)
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/version
+        name: get package.json version
+        id: get_version
+      - name: echo version in package json
+        run: |
+          echo ${{steps.get_version.outputs.version}}
+      - uses: google-github-actions/release-please-action@v4
+        id: release
+        with:
+          config-file: .github/workflows/release-please-config.json
+          manifest-file: .github/workflows/release-please-manifest.json
+          target-branch: ${{ github.ref_name }}
+      - run: |
+          echo "release-please-action say - v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}"
+          if: ${{ steps.release.outputs.release_created }}

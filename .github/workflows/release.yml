@@ -24,7 +24,7 @@ jobs:
         with:
           target-branch: ${{ github.ref_name }}
           config-file: .github/workflows/release-please-config.json
-          manifest-file: .github/workflows/.release-please-manifest.json
+          manifest-file: .github/workflows/release-please-manifest.json
       - run: |
           echo "release-please-action say - v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}"
         if: ${{ steps.release.outputs.release_created }}

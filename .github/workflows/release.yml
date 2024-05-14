@@ -19,12 +19,12 @@ jobs:
       - name: echo version in package json
         run: |
           echo ${{steps.get_version.outputs.version}}
-      - uses: google-github-actions/release-please-action@v4
+      - uses: google-github-actions/release-please-action@v3
         id: release
         with:
+          release-type: node
           config-file: .github/workflows/release-please-config.json
           manifest-file: .github/workflows/release-please-manifest.json
-          target-branch: ${{ github.ref_name }}
       - run: |
           echo "release-please-action say - v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}"
           if: ${{ steps.release.outputs.release_created }}

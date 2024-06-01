@@ -1,9 +1,8 @@
-name: Node.js Package (Github)
+name: Release
 on:
   push:
-    branches:
-      - main
-      - master
+    tags:
+      - 'v*'
 
 jobs:
   build:
@@ -13,16 +12,14 @@ jobs:
       pull-requests: write
     steps:
       - uses: actions/checkout@v3
-      - uses: ./.github/actions/version
-        name: get package.json version
-        id: get_version
-      - name: echo version in package json
-        run: |
-          echo ${{steps.get_version.outputs.version}}
-      - uses: googleapis/release-please-action@v4
-        id: release
+      - name: Install Node.js
+        uses: actions/setup-node@v4
         with:
-          target-branch: ${{ github.ref_name }}
-      - run: |
-          echo "release-please-action say - v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}"
-        if: ${{ steps.release.outputs.release_created }}
+          node-version-file: '.nvmrc'
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 8
+      - name: add changelog in release
+        run: npx changelogithub
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

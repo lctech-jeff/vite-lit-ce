@@ -1,0 +1,20 @@
+{
+  "types": {
+    "feat": { "title": "🚀 Features" },
+    "fix": { "title": "🐞 Bug Fixes" },
+    "refactor": { "title": "♻️ Refactor" },
+    "perf": { "title": "🏎 Performance" },
+    "test": { "title": "✅ Tests" },
+    "docs": { "title": "📖 Documentation" },
+    "chore": { "title": "🔧 Chores" },
+    "examples": { "title": "🏀 Examples" },
+    "style": { "title": "🎨 Styles" },
+    "ci": { "title": "🤖 CI" }
+  },
+  "titles": {
+    "breakingChanges": "🚨 Breaking Changes"
+  },
+  "contributors": false,
+  "capitalize": true,
+  "group": true
+}

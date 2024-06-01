@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Lit + TS</title>
+    <script type="module" src="../dist/j-all.js" async></script>
+  </head>
+  <body>
+    <style>
+      :root {
+        background-color: #ffffff;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          background-color: #242424;
+        }
+      }
+
+      #app {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 2rem;
+        text-align: center;
+      }
+    </style>
+    <div id="app">
+      <j-counter></j-counter>
+      <j-btn-primary></j-btn-primary>
+      <j-btn-secondary></j-btn-secondary>
+    </div>
+  </body>
+</html>

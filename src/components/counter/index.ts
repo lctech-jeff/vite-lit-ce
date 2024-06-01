@@ -4,8 +4,8 @@ import { customElement, property } from 'lit/decorators.js'
 
 import style from './style.css?inline'
 
-@customElement('my-counter')
-export class MyCounter extends TailwindElement(style) {
+@customElement('j-counter')
+export class JCounter extends TailwindElement(style) {
   @property({ type: Number })
   count = 0
 
@@ -22,6 +22,6 @@ export class MyCounter extends TailwindElement(style) {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'my-counter': MyCounter
+    'j-counter': JCounter
   }
 }

@@ -1,0 +1,11 @@
+:host {
+  @apply inline-block;
+}
+
+button {
+  @apply cursor-pointer rounded-lg border border-transparent bg-[var(--bg-color)] font-medium text-[var(--text-color)] transition-[border-color] duration-[0.25s] hover:border-[#646cff];
+  &:focus,
+  &:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+}

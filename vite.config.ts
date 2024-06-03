@@ -2,7 +2,7 @@ import { globSync } from 'glob'
 import { fileURLToPath, URL } from 'url'
 import { defineConfig } from 'vite'
 
-const toCamelCase = str => {
+const toCamelCase = (str: string): string => {
   const matchRes = str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
 
   if (!matchRes) return ''
@@ -33,7 +33,7 @@ export default defineConfig({
     lib: {
       entry: {
         ...inputFiles,
-        all: fileURLToPath(new URL('./src/index.ts', import.meta.url))
+        all: fileURLToPath(new URL('./src/index.ts', import.meta.url)),
       },
       fileName: `j-[name]`,
     },

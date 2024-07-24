@@ -11,17 +11,17 @@
   },
   "dependencies": {
     "bumpp": "^9.4.1",
-    "glob": "^10.4.2",
+    "glob": "^11.0.0",
     "lit": "^3.1.4"
   },
   "devDependencies": {
-    "@types/node": "^20.14.8",
+    "@types/node": "^20.14.12",
     "autoprefixer": "^10.4.19",
-    "postcss": "^8.4.38",
-    "prettier": "^3.3.2",
+    "postcss": "^8.4.39",
+    "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.5",
-    "tailwindcss": "^3.4.4",
-    "typescript": "^5.5.2",
-    "vite": "^5.3.1"
+    "tailwindcss": "^3.4.6",
+    "typescript": "^5.5.4",
+    "vite": "^5.3.4"
   }
 }
